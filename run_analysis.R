@@ -83,5 +83,5 @@ library(dplyr)
 combined_dat %>% group_by(subject_id,activity) %>% summarise(across(everything(),list(mean)))
 
 #### write output
-write.table(combined_dat,"filename.txt",row.name=FALSE)
+write.table(combined_dat,"data_summary_means.txt",row.name=FALSE)
 
