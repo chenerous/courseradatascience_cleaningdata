@@ -19,27 +19,69 @@
 # 5. From the data set in step 4, creates a second, independent tidy data set with 
 #   the average of each variable for each activity and each subject.
 #
-# Note that the code expects to find the input files in the working directory 
-# 
+# Note:
+#  the code expects to find the input files in the working directory 
+#  the dyplr package is required
 ######################################################################
+#### library calls
+library(dplyr)
 
 #### reading data (several input files need to be read)
-
 # read features.txt which has the ordered names of the variables
-varnames <- read.table("../UCI HAR Dataset/features.txt")
+filename_features <- "../UCI HAR Dataset/features.txt"
+if (file.exists(filename_features)){
+  varnames <- read.table(filename_features)  
+}else{
+  stop("features.txt file not found")
+}
 
 # read activity_labels.txt which has the names of activities and IDs
-activitynames <- read.table("../UCI HAR Dataset/activity_labels.txt")
+filename_activities <- "../UCI HAR Dataset/activity_labels.txt"
+if (file.exists(filename_activities)){
+  activitynames <- read.table(filename_activities)  
+}else{
+  stop("activity_labels.txt file not found")
+}
 
 # read the training data
-subject_train <- read.table("../UCI HAR Dataset/train/subject_train.txt") #lists subject ID of each record
-activity_train <- read.table("../UCI HAR Dataset/train/y_train.txt") #lists activity ID of each record
-train_dat <- read.table("../UCI HAR Dataset/train/X_train.txt") #recorded data (rows=records, columns=variables)
+filename_subject_train <-"../UCI HAR Dataset/train/subject_train.txt" #lists subject ID of each record
+filename_y_train<-"../UCI HAR Dataset/train/y_train.txt" #lists activity ID of each record
+filename_X_train <- "../UCI HAR Dataset/train/X_train.txt" #recorded data (rows=records, columns=variables)
+if (file.exists(filename_subject_train)){
+subject_train <- read.table(filename_subject_train)
+}else{
+  stop("subject_train.txt file not found")
+}
+if (file.exists(filename_y_train)){
+  activity_train <- read.table(filename_y_train) 
+}else{
+  stop("y_train.txt file not found")
+}
+if (file.exists(filename_X_train)){
+  train_dat <- read.table(filename_X_train) 
+}else{
+  stop("X_train.txt file not found")
+}
 
 # read the test data
-subject_test <- read.table("../UCI HAR Dataset/test/subject_test.txt") #lists subject ID of each record
-activity_test <- read.table("../UCI HAR Dataset/test/y_test.txt") #lists activity ID of each record
-test_dat <- read.table("../UCI HAR Dataset/test/X_test.txt") #recorded data (rows=records, columns=variables)
+filename_subject_test <-"../UCI HAR Dataset/test/subject_test.txt" #lists subject ID of each record
+filename_y_test<-"../UCI HAR Dataset/test/y_test.txt" #lists activity ID of each record
+filename_X_test <- "../UCI HAR Dataset/test/X_test.txt" #recorded data (rows=records, columns=variables)
+if (file.exists(filename_subject_test)){
+  subject_test <- read.table(filename_subject_test)
+}else{
+  stop("subject_test.txt file not found")
+}
+if (file.exists(filename_y_test)){
+  activity_test <- read.table(filename_y_test) 
+}else{
+  stop("y_test.txt file not found")
+}
+if (file.exists(filename_X_test)){
+  test_dat <- read.table(filename_X_test) 
+}else{
+  stop("X_test.txt file not found")
+}
 
 #### Step 1:  Merging data 
 
@@ -79,7 +121,6 @@ names(combined_dat) <- colnames
 #### Step 5:  Create a second, independent tidy data set with the 
 ####          average of each variable for each activity and each subject
 
-library(dplyr)
 combined_dat %>% group_by(subject_id,activity) %>% summarise(across(everything(),list(mean)))
 
 #### write output
