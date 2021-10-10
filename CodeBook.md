@@ -36,34 +36,63 @@ This file has 68 columns:
 1                subject_id
 2                   activity
 3            tBodyAcc-mean-X
+
 4            tBodyAcc-mean-Y
+
 5            tBodyAcc-mean-Z
+
 6         tGravityAcc-mean-X
+
 7         tGravityAcc-mean-Y
+
 8         tGravityAcc-mean-Z
+
 9        tBodyAccJerk-mean-X
+
 10       tBodyAccJerk-mean-Y
+
 11       tBodyAccJerk-mean-Z
+
 12          tBodyGyro-mean-X
+
 13          tBodyGyro-mean-Y
+
 14          tBodyGyro-mean-Z
+
 15      tBodyGyroJerk-mean-X
+
 16      tBodyGyroJerk-mean-Y
+
 17      tBodyGyroJerk-mean-Z
+
 18          tBodyAccMag-mean
+
 19       tGravityAccMag-mean
+
 20      tBodyAccJerkMag-mean
+
 21         tBodyGyroMag-mean
+
 22     tBodyGyroJerkMag-mean
+
 23           fBodyAcc-mean-X
+
 24           fBodyAcc-mean-Y
+
 25           fBodyAcc-mean-Z
+
 26       fBodyAccJerk-mean-X
+
 27       fBodyAccJerk-mean-Y
+
 28       fBodyAccJerk-mean-Z
+
 29          fBodyGyro-mean-X
+
 30          fBodyGyro-mean-Y
+
 31          fBodyGyro-mean-Z
+
 32          fBodyAccMag-mean
 33  fBodyBodyAccJerkMag-mean
 34     fBodyBodyGyroMag-mean
