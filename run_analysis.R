@@ -132,8 +132,8 @@ names(combined_dat) <- colnames
 #### Step 5:  Create a second, independent tidy data set with the 
 ####          average of each variable for each activity and each subject
 
-combined_dat %>% group_by(subject_id,activity) %>% summarise(across(everything(),list(mean)))
+out_dat <- combined_dat %>% group_by(subject_id,activity) %>% summarise(across(everything(),list(mean)))
 
 #### write output
-write.table(combined_dat,"data_summary_means.txt",row.name=FALSE)
+write.table(out_dat,"data_summary_means.txt",row.name=FALSE)
 
