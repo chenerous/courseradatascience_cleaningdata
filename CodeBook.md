@@ -34,7 +34,9 @@ Below, the output file is described:
 This file has 68 columns:
 
 1                subject_id
+
 2                   activity
+
 3            tBodyAcc-mean-X
 
 4            tBodyAcc-mean-Y
@@ -94,51 +96,92 @@ This file has 68 columns:
 31          fBodyGyro-mean-Z
 
 32          fBodyAccMag-mean
+
 33  fBodyBodyAccJerkMag-mean
+
 34     fBodyBodyGyroMag-mean
+
 35 fBodyBodyGyroJerkMag-mean
+
 36            tBodyAcc-std-X
+
 37            tBodyAcc-std-Y
+
 38            tBodyAcc-std-Z
+
 39         tGravityAcc-std-X
+
 40         tGravityAcc-std-Y
+
 41         tGravityAcc-std-Z
+
 42        tBodyAccJerk-std-X
+
 43        tBodyAccJerk-std-Y
+
 44        tBodyAccJerk-std-Z
+
 45           tBodyGyro-std-X
+
 46           tBodyGyro-std-Y
+
 47           tBodyGyro-std-Z
+
 48       tBodyGyroJerk-std-X
+
 49       tBodyGyroJerk-std-Y
+
 50       tBodyGyroJerk-std-Z
+
 51           tBodyAccMag-std
+
 52        tGravityAccMag-std
+
 53       tBodyAccJerkMag-std
+
 54          tBodyGyroMag-std
+
 55      tBodyGyroJerkMag-std
+
 56            fBodyAcc-std-X
+
 57            fBodyAcc-std-Y
+
 58            fBodyAcc-std-Z
+
 59        fBodyAccJerk-std-X
+
 60        fBodyAccJerk-std-Y
+
 61        fBodyAccJerk-std-Z
+
 62           fBodyGyro-std-X
+
 63           fBodyGyro-std-Y
+
 64           fBodyGyro-std-Z
+
 65           fBodyAccMag-std
+
 66   fBodyBodyAccJerkMag-std
+
 67      fBodyBodyGyroMag-std
+
 68  fBodyBodyGyroJerkMag-std
 
 Column 1:  subject_id has 30 values, numbered 1 through 30
 Column 2:  activity uses the following 6 activities:  
 
 1                      STANDING
+
 2                       SITTING
+
 3                        LAYING
+
 4                       WALKING
+
 5            WALKING_DOWNSTAIRS
+
 6              WALKING_UPSTAIRS
 
 The description of the following 66 columns is paraphrased from the features_info.txt file found here: 
@@ -155,26 +198,43 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 tBodyAcc-XYZ
+
 tGravityAcc-XYZ
+
 tBodyAccJerk-XYZ
+
 tBodyGyro-XYZ
+
 tBodyGyroJerk-XYZ
+
 tBodyAccMag
+
 tGravityAccMag
+
 tBodyAccJerkMag
+
 tBodyGyroMag
+
 tBodyGyroJerkMag
+
 fBodyAcc-XYZ
+
 fBodyAccJerk-XYZ
+
 fBodyGyro-XYZ
+
 fBodyAccMag
+
 fBodyAccJerkMag
+
 fBodyGyroMag
+
 fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
 mean: Mean value
+
 std: Standard deviation
 
 From these variables, the output file returns the average for each activity and subject.  

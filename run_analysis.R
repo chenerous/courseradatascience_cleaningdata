@@ -19,16 +19,27 @@
 # 5. From the data set in step 4, creates a second, independent tidy data set with 
 #   the average of each variable for each activity and each subject.
 #
-# Note:
-#  the code expects to find the input files in the working directory 
-#  the dyplr package is required
+# Notes:
+#
+# the code expects to find the following input files in the working directory 
+# 1. features.txt
+# 2. activity_labels.txt
+# 3. subject_train.txt
+# 4. X_train.txt
+# 5. y_train.txt
+# 6. subject_test.txt
+# 7. X_test.txt
+# 8. y_test.txt
+#
+# the dyplr package is required
+#
 ######################################################################
 #### library calls
 library(dplyr)
 
 #### reading data (several input files need to be read)
 # read features.txt which has the ordered names of the variables
-filename_features <- "../UCI HAR Dataset/features.txt"
+filename_features <- "features.txt"
 if (file.exists(filename_features)){
   varnames <- read.table(filename_features)  
 }else{
@@ -36,7 +47,7 @@ if (file.exists(filename_features)){
 }
 
 # read activity_labels.txt which has the names of activities and IDs
-filename_activities <- "../UCI HAR Dataset/activity_labels.txt"
+filename_activities <- "activity_labels.txt"
 if (file.exists(filename_activities)){
   activitynames <- read.table(filename_activities)  
 }else{
@@ -44,9 +55,9 @@ if (file.exists(filename_activities)){
 }
 
 # read the training data
-filename_subject_train <-"../UCI HAR Dataset/train/subject_train.txt" #lists subject ID of each record
-filename_y_train<-"../UCI HAR Dataset/train/y_train.txt" #lists activity ID of each record
-filename_X_train <- "../UCI HAR Dataset/train/X_train.txt" #recorded data (rows=records, columns=variables)
+filename_subject_train <-"subject_train.txt" #lists subject ID of each record
+filename_y_train<-"y_train.txt" #lists activity ID of each record
+filename_X_train <- "X_train.txt" #recorded data (rows=records, columns=variables)
 if (file.exists(filename_subject_train)){
 subject_train <- read.table(filename_subject_train)
 }else{
@@ -64,9 +75,9 @@ if (file.exists(filename_X_train)){
 }
 
 # read the test data
-filename_subject_test <-"../UCI HAR Dataset/test/subject_test.txt" #lists subject ID of each record
-filename_y_test<-"../UCI HAR Dataset/test/y_test.txt" #lists activity ID of each record
-filename_X_test <- "../UCI HAR Dataset/test/X_test.txt" #recorded data (rows=records, columns=variables)
+filename_subject_test <-"subject_test.txt" #lists subject ID of each record
+filename_y_test<-"y_test.txt" #lists activity ID of each record
+filename_X_test <- "X_test.txt" #recorded data (rows=records, columns=variables)
 if (file.exists(filename_subject_test)){
   subject_test <- read.table(filename_subject_test)
 }else{
